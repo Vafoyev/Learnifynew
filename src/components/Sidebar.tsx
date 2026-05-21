@@ -7,7 +7,7 @@ import { useAppStore } from '../store/useAppStore'
 
 const navItems = [
   { to: '/', icon: Rocket, label: '🚀 Bosh sahifa' },
-  { to: '/curriculum', icon: BookOpen, label: '📚 O\'quv rejasi' },
+  { to: '/curriculum', icon: BookOpen, label: '📚 Mavzular' },
   { to: '/quizzes', icon: Brain, label: '🧠 Testlar' },
   { to: '/code-lab', icon: Code2, label: '💻 Kod laboratoriyasi' },
   { to: '/leaderboard', icon: Trophy, label: '🏆 Reyting' },
