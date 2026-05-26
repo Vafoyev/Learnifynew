@@ -14,7 +14,7 @@ export default function Quizzes() {
         <motion.h1 initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="text-3xl font-extrabold">
           <span className="cyber-gradient-text">Testlar</span>
         </motion.h1>
-        <p className="text-white/40 text-sm mt-1">Barcha mavzular bo'yicha bilimingizni sinang</p>
+        <p className="text-slate-400 text-sm mt-1">Barcha mavzular bo'yicha bilimingizni sinang</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
@@ -39,15 +39,15 @@ export default function Quizzes() {
                 >
                   {topic.icon}
                 </div>
-                {done && <CheckCircle size={18} className="text-green-400" />}
+                {done && <CheckCircle size={18} className="text-green-500" />}
               </div>
-              <h3 className="text-sm font-semibold text-white/90 mb-1">{topic.title}</h3>
-              <p className="text-xs text-white/30 mb-4">{topic.quizzes.length} ta savol</p>
+              <h3 className="text-sm font-semibold text-slate-800 mb-1">{topic.title}</h3>
+              <p className="text-xs text-slate-400 mb-4">{topic.quizzes.length} ta savol</p>
               <div className="flex items-center justify-between">
                 {bestScore !== null ? (
-                  <span className="text-xs text-white/40">Eng yaxshi: {bestScore}/{topic.quizzes.length}</span>
+                  <span className="text-xs text-slate-400">Eng yaxshi: {bestScore}/{topic.quizzes.length}</span>
                 ) : (
-                  <span className="text-xs text-white/20">Hali topshirilmagan</span>
+                  <span className="text-xs text-slate-300">Hali topshirilmagan</span>
                 )}
                 <div className="flex items-center gap-1 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: topic.color }}>
                   <Play size={12} /> Boshlash

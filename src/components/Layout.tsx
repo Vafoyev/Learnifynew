@@ -8,7 +8,7 @@ export default function Layout() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const location = useLocation()
   return (
-    <div className="min-h-screen bg-cyber-900 relative">
+    <div className="min-h-screen bg-[#f0f4ff] relative">
       <ParticlesBackground />
       <Sidebar isOpen={sidebarOpen} onToggle={() => setSidebarOpen(!sidebarOpen)} />
       <main className="lg:ml-[260px] min-h-screen relative z-10">

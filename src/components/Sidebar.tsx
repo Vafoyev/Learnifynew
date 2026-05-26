@@ -30,7 +30,7 @@ export default function Sidebar({ isOpen, onToggle }: SidebarProps) {
       {/* Mobile overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/60 z-40 lg:hidden"
+          className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 lg:hidden"
           onClick={onToggle}
         />
       )}
@@ -38,7 +38,7 @@ export default function Sidebar({ isOpen, onToggle }: SidebarProps) {
       {/* Mobile toggle */}
       <button
         onClick={onToggle}
-        className="fixed top-4 left-4 z-50 lg:hidden p-2 rounded-xl bg-white/5 backdrop-blur-xl border border-white/10 text-white"
+        className="fixed top-4 left-4 z-50 lg:hidden p-2 rounded-xl bg-white/80 backdrop-blur-xl border border-slate-200 text-slate-700 shadow-sm"
       >
         {isOpen ? <X size={20} /> : <Menu size={20} />}
       </button>
@@ -54,9 +54,9 @@ export default function Sidebar({ isOpen, onToggle }: SidebarProps) {
         >
           <h1 className="text-2xl font-extrabold tracking-tight">
             <span className="cyber-gradient-text">Lernify</span>
-            <span className="text-white/80 ml-1">CS</span>
+            <span className="text-slate-500 ml-1">CS</span>
           </h1>
-          <p className="text-[11px] text-white/30 mt-1 tracking-widest uppercase">
+          <p className="text-[11px] text-slate-400 mt-1 tracking-widest uppercase">
             O'quv platformasi
           </p>
         </motion.div>
@@ -86,29 +86,29 @@ export default function Sidebar({ isOpen, onToggle }: SidebarProps) {
         </nav>
 
         {/* User info at bottom */}
-        <div className="px-2 pt-4 border-t border-white/5">
+        <div className="px-2 pt-4 border-t border-slate-200/60">
           {user ? (
             <NavLink to="/profile" className="flex items-center gap-3 group">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-glow/20 to-purple-500/20 flex items-center justify-center text-xs font-bold text-cyan-400 border border-white/10">
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center text-xs font-bold text-indigo-600 border border-indigo-200/50">
                 {user.firstName[0]}{user.lastName[0]}
               </div>
               <div className="min-w-0">
-                <p className="text-xs font-medium text-white/70 truncate group-hover:text-white transition-colors">
+                <p className="text-xs font-medium text-slate-600 truncate group-hover:text-slate-900 transition-colors">
                   {user.firstName} {user.lastName}
                 </p>
-                <p className="text-[10px] text-white/30 truncate">
+                <p className="text-[10px] text-slate-400 truncate">
                   {teacher ? teacher.name : 'O\'quvchi'}
                 </p>
               </div>
             </NavLink>
           ) : (
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-cyber-glow/20 to-cyber-purple/20 flex items-center justify-center text-sm font-bold text-cyber-glow">
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center text-sm font-bold text-indigo-600">
                 CS
               </div>
               <div>
-                <p className="text-xs font-medium text-white/70">O'quvchi</p>
-                <p className="text-[10px] text-white/30">v1.0.0</p>
+                <p className="text-xs font-medium text-slate-600">O'quvchi</p>
+                <p className="text-[10px] text-slate-400">v1.0.0</p>
               </div>
             </div>
           )}

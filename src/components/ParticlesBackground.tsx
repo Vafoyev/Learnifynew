@@ -26,13 +26,13 @@ export default function ParticlesBackground() {
             resize: { enable: true } as any,
           },
           modes: {
-            grab: { distance: 180, links: { opacity: 0.4 } },
+            grab: { distance: 180, links: { opacity: 0.3 } },
           },
         },
         particles: {
-          color: { value: ['#00f0ff', '#a855f7', '#3b82f6'] },
+          color: { value: ['#818cf8', '#a78bfa', '#c4b5fd'] },
           links: {
-            color: '#00f0ff',
+            color: '#a5b4fc',
             distance: 160,
             enable: true,
             opacity: 0.12,
@@ -40,17 +40,17 @@ export default function ParticlesBackground() {
           },
           move: {
             enable: true,
-            speed: 0.8,
+            speed: 0.6,
             direction: 'none' as const,
             outModes: { default: 'bounce' as const },
           },
           number: {
             density: { enable: true, width: 1920, height: 1080 },
-            value: 80,
+            value: 50,
           },
-          opacity: { value: { min: 0.15, max: 0.5 } },
+          opacity: { value: { min: 0.1, max: 0.35 } },
           shape: { type: 'circle' },
-          size: { value: { min: 1, max: 3 } },
+          size: { value: { min: 1, max: 2.5 } },
         },
         detectRetina: true,
       }}

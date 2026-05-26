@@ -25,7 +25,7 @@ function generateAIAnalysis(score: number, total: number, topicTitle: string, wr
     return {
       emoji: '🏆',
       grade: 'Mukammal',
-      gradeColor: '#fbbf24',
+      gradeColor: '#d97706',
       conclusion: `Ajoyib! Siz "${topicTitle}" mavzusini to'liq va mukammal o'zlashtirdingiz. Barcha ${total} ta savol to'g'ri javoblandi. Bu sizning ushbu sohadagi bilim darajangiz yuqori ekanligini ko'rsatadi.`,
       strengths: [
         "Mavzuning barcha asosiy tushunchalarini chuqur tushunasiz",
@@ -46,7 +46,7 @@ function generateAIAnalysis(score: number, total: number, topicTitle: string, wr
     return {
       emoji: '⭐',
       grade: "A'lo",
-      gradeColor: '#34d399',
+      gradeColor: '#059669',
       conclusion: `Zo'r natija! "${topicTitle}" mavzusini asosan yaxshi o'zlashtirdingiz. ${score} ta savolga to'g'ri javob berdingiz. Bir necha nuqson mavjud bo'lsa-da, umuman bilim darajangiz yuqori.`,
       strengths: [
         "Mavzuning asosiy konsepsiyalarini yaxshi tushunasiz",
@@ -71,7 +71,7 @@ function generateAIAnalysis(score: number, total: number, topicTitle: string, wr
     return {
       emoji: '📚',
       grade: 'Yaxshi',
-      gradeColor: '#60a5fa',
+      gradeColor: '#2563eb',
       conclusion: `Yaxshi boshlang'ich! "${topicTitle}" mavzusini o'rtacha darajada o'zlashtirdingiz. ${score} ta savolga to'g'ri javob berdingiz, ammo bilimlaringizni mustahkamlash va tushunchalarni chuqurlashtirish lozim.`,
       strengths: [
         "Mavzuning asosiy g'oyalarini qisman tushunasiz",
@@ -96,7 +96,7 @@ function generateAIAnalysis(score: number, total: number, topicTitle: string, wr
     return {
       emoji: '⚠️',
       grade: 'Qoniqarli',
-      gradeColor: '#f59e0b',
+      gradeColor: '#d97706',
       conclusion: `"${topicTitle}" mavzusida qiyinchiliklar mavjud. Faqat ${score} ta savolga to'g'ri javob berdingiz. Bu mavzu sizga qiyin tuyulmoqda — lekin bu normal, ko'proq mashq qilsangiz yaxshi natijalarga erishasiz.`,
       strengths: [
         "Mavzuni o'rganishga kirishganingiz o'zi katta qadam",
@@ -121,7 +121,7 @@ function generateAIAnalysis(score: number, total: number, topicTitle: string, wr
   return {
     emoji: '🔄',
     grade: "Qayta o'rganish kerak",
-    gradeColor: '#f87171',
+    gradeColor: '#dc2626',
     conclusion: `"${topicTitle}" mavzusi siz uchun hali yangi va qiyin ko'rinmoqda. Faqat ${score} ta savolga to'g'ri javob berdingiz. Bu sohada asosiy bilimlarni shakllantirishdan boshlash kerak.`,
     strengths: [
       "Testni topshirishga kirishganingiz — bu jasurlik",
@@ -164,7 +164,7 @@ export default function QuizPlay() {
   if (!topic) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[60vh] gap-4">
-        <p className="text-white/40">Mavzu topilmadi</p>
+        <p className="text-slate-400">Mavzu topilmadi</p>
         <button onClick={() => navigate('/curriculum')} className="btn-cyber">Mavzularga qaytish</button>
       </div>
     )
@@ -244,33 +244,33 @@ export default function QuizPlay() {
           >
             <div
               className="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3"
-              style={{ background: `${ai.gradeColor}20`, color: ai.gradeColor, border: `1px solid ${ai.gradeColor}40` }}
+              style={{ background: `${ai.gradeColor}15`, color: ai.gradeColor, border: `1px solid ${ai.gradeColor}30` }}
             >
               {ai.grade}
             </div>
-            <h2 className="text-2xl font-bold text-white mb-1">Test yakunlandi!</h2>
-            <p className="text-white/40 text-sm mb-5 line-clamp-2">{topic.title}</p>
+            <h2 className="text-2xl font-bold text-slate-800 mb-1">Test yakunlandi!</h2>
+            <p className="text-slate-400 text-sm mb-5 line-clamp-2">{topic.title}</p>
 
             <div className="text-6xl font-extrabold mb-2">
               <span style={{ color: ai.gradeColor }}>{score}</span>
-              <span className="text-white/20">/{total}</span>
+              <span className="text-slate-300">/{total}</span>
             </div>
 
             {/* Stats row */}
             <div className="flex items-center justify-center gap-6 mb-6">
               <div className="text-center">
                 <div className="text-2xl font-bold" style={{ color: ai.gradeColor }}>{pct}%</div>
-                <div className="text-xs text-white/30">To'g'ri</div>
+                <div className="text-xs text-slate-400">To'g'ri</div>
               </div>
-              <div className="w-px h-8 bg-white/10" />
+              <div className="w-px h-8 bg-slate-200" />
               <div className="text-center">
-                <div className="text-2xl font-bold text-cyan-400">+{xpEarned}</div>
-                <div className="text-xs text-white/30">XP</div>
+                <div className="text-2xl font-bold text-indigo-500">+{xpEarned}</div>
+                <div className="text-xs text-slate-400">XP</div>
               </div>
-              <div className="w-px h-8 bg-white/10" />
+              <div className="w-px h-8 bg-slate-200" />
               <div className="text-center">
-                <div className="text-2xl font-bold text-white/50">{wrongCount}</div>
-                <div className="text-xs text-white/30">Xato</div>
+                <div className="text-2xl font-bold text-slate-400">{wrongCount}</div>
+                <div className="text-xs text-slate-400">Xato</div>
               </div>
             </div>
 
@@ -293,15 +293,15 @@ export default function QuizPlay() {
           className="glass-panel overflow-hidden"
         >
           {/* Header */}
-          <div className="px-6 pt-5 pb-4 flex items-center gap-3" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center border border-white/10">
-              <Brain size={18} className="text-cyan-400" />
+          <div className="px-6 pt-5 pb-4 flex items-center gap-3 border-b border-slate-100">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center border border-indigo-200/50">
+              <Brain size={18} className="text-indigo-500" />
             </div>
             <div>
-              <h3 className="text-sm font-bold text-white">AI Tahlili va Tavsiyalar</h3>
-              <p className="text-[11px] text-white/30">Natijalaringizga asoslangan aqlli tahlil</p>
+              <h3 className="text-sm font-bold text-slate-800">AI Tahlili va Tavsiyalar</h3>
+              <p className="text-[11px] text-slate-400">Natijalaringizga asoslangan aqlli tahlil</p>
             </div>
-            <div className="ml-auto flex items-center gap-1 text-[11px] font-medium text-cyan-400 bg-cyan-400/10 px-2 py-1 rounded-full border border-cyan-400/20">
+            <div className="ml-auto flex items-center gap-1 text-[11px] font-medium text-indigo-600 bg-indigo-50 px-2 py-1 rounded-full border border-indigo-200/50">
               <Star size={10} />
               AI Powered
             </div>
@@ -310,12 +310,12 @@ export default function QuizPlay() {
           <div className="p-5 space-y-4">
 
             {/* AI Conclusion */}
-            <div className="rounded-xl p-4" style={{ background: `${ai.gradeColor}10`, border: `1px solid ${ai.gradeColor}25` }}>
+            <div className="rounded-xl p-4" style={{ background: `${ai.gradeColor}08`, border: `1px solid ${ai.gradeColor}20` }}>
               <div className="flex items-start gap-3">
                 <Target size={16} style={{ color: ai.gradeColor }} className="mt-0.5 shrink-0" />
                 <div>
                   <p className="text-xs font-bold mb-1" style={{ color: ai.gradeColor }}>AI Xulosasi</p>
-                  <p className="text-sm text-white/70 leading-relaxed">{ai.conclusion}</p>
+                  <p className="text-sm text-slate-600 leading-relaxed">{ai.conclusion}</p>
                 </div>
               </div>
             </div>
@@ -324,8 +324,8 @@ export default function QuizPlay() {
             {ai.strengths.length > 0 && (
               <div>
                 <div className="flex items-center gap-2 mb-2">
-                  <TrendingUp size={13} className="text-green-400" />
-                  <span className="text-xs font-bold text-green-400">Kuchli tomonlaringiz</span>
+                  <TrendingUp size={13} className="text-green-500" />
+                  <span className="text-xs font-bold text-green-600">Kuchli tomonlaringiz</span>
                 </div>
                 <div className="space-y-1.5">
                   {ai.strengths.map((s, i) => (
@@ -334,10 +334,10 @@ export default function QuizPlay() {
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.65 + i * 0.08 }}
-                      className="flex items-start gap-2.5 bg-green-400/5 border border-green-400/15 rounded-lg px-3 py-2"
+                      className="flex items-start gap-2.5 bg-green-50 border border-green-200/50 rounded-lg px-3 py-2"
                     >
-                      <Check size={13} className="text-green-400 mt-0.5 shrink-0" />
-                      <span className="text-xs text-white/65 leading-relaxed">{s}</span>
+                      <Check size={13} className="text-green-500 mt-0.5 shrink-0" />
+                      <span className="text-xs text-slate-600 leading-relaxed">{s}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -348,8 +348,8 @@ export default function QuizPlay() {
             {ai.improvements.length > 0 && (
               <div>
                 <div className="flex items-center gap-2 mb-2">
-                  <AlertCircle size={13} className="text-amber-400" />
-                  <span className="text-xs font-bold text-amber-400">Rivojlantirish kerak bo'lgan sohalar</span>
+                  <AlertCircle size={13} className="text-amber-500" />
+                  <span className="text-xs font-bold text-amber-600">Rivojlantirish kerak bo'lgan sohalar</span>
                 </div>
                 <div className="space-y-1.5">
                   {ai.improvements.map((imp, i) => (
@@ -358,10 +358,10 @@ export default function QuizPlay() {
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.75 + i * 0.08 }}
-                      className="flex items-start gap-2.5 bg-amber-400/5 border border-amber-400/15 rounded-lg px-3 py-2"
+                      className="flex items-start gap-2.5 bg-amber-50 border border-amber-200/50 rounded-lg px-3 py-2"
                     >
-                      <X size={13} className="text-amber-400 mt-0.5 shrink-0" />
-                      <span className="text-xs text-white/65 leading-relaxed">{imp}</span>
+                      <X size={13} className="text-amber-500 mt-0.5 shrink-0" />
+                      <span className="text-xs text-slate-600 leading-relaxed">{imp}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -371,8 +371,8 @@ export default function QuizPlay() {
             {/* Tips */}
             <div>
               <div className="flex items-center gap-2 mb-2">
-                <Lightbulb size={13} className="text-purple-400" />
-                <span className="text-xs font-bold text-purple-400">AI Rivojlantirish maslahatlari</span>
+                <Lightbulb size={13} className="text-purple-500" />
+                <span className="text-xs font-bold text-purple-600">AI Rivojlantirish maslahatlari</span>
               </div>
               <div className="space-y-1.5">
                 {ai.tips.map((tip, i) => (
@@ -381,10 +381,10 @@ export default function QuizPlay() {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.85 + i * 0.08 }}
-                    className="flex items-start gap-2.5 bg-purple-400/5 border border-purple-400/15 rounded-lg px-3 py-2"
+                    className="flex items-start gap-2.5 bg-purple-50 border border-purple-200/50 rounded-lg px-3 py-2"
                   >
-                    <span className="text-purple-400 font-bold text-xs shrink-0 mt-0.5">{i + 1}.</span>
-                    <span className="text-xs text-white/65 leading-relaxed">{tip}</span>
+                    <span className="text-purple-500 font-bold text-xs shrink-0 mt-0.5">{i + 1}.</span>
+                    <span className="text-xs text-slate-600 leading-relaxed">{tip}</span>
                   </motion.div>
                 ))}
               </div>
@@ -395,13 +395,13 @@ export default function QuizPlay() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.05 }}
-              className="rounded-xl p-4 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-400/20"
+              className="rounded-xl p-4 bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-200/40"
             >
               <div className="flex items-start gap-2.5">
-                <ArrowRight size={14} className="text-cyan-400 mt-0.5 shrink-0" />
+                <ArrowRight size={14} className="text-indigo-500 mt-0.5 shrink-0" />
                 <div>
-                  <p className="text-xs font-bold text-cyan-400 mb-1">Keyingi qadam</p>
-                  <p className="text-xs text-white/60 leading-relaxed">{ai.nextSteps}</p>
+                  <p className="text-xs font-bold text-indigo-600 mb-1">Keyingi qadam</p>
+                  <p className="text-xs text-slate-500 leading-relaxed">{ai.nextSteps}</p>
                 </div>
               </div>
             </motion.div>
@@ -417,14 +417,14 @@ export default function QuizPlay() {
     <div className="max-w-2xl mx-auto space-y-6">
       {/* Header */}
       <div className="flex items-center justify-between">
-        <button onClick={() => navigate('/curriculum')} className="flex items-center gap-2 text-white/40 hover:text-white/70 text-sm transition-colors">
+        <button onClick={() => navigate('/curriculum')} className="flex items-center gap-2 text-slate-400 hover:text-slate-700 text-sm transition-colors">
           <ArrowLeft size={16} /> Orqaga
         </button>
-        <span className="text-xs text-white/30 font-mono">{current + 1} / {total}</span>
+        <span className="text-xs text-slate-400 font-mono">{current + 1} / {total}</span>
       </div>
 
       {/* Progress bar */}
-      <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
+      <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
         <motion.div
           className="h-full rounded-full"
           style={{ background: `linear-gradient(90deg, ${topic.color}, ${topic.color}88)` }}
@@ -436,7 +436,7 @@ export default function QuizPlay() {
       {/* Topic badge */}
       <div className="flex items-center gap-2">
         <span className="text-lg">{topic.icon}</span>
-        <span className="text-sm font-medium text-white/50">{topic.title}</span>
+        <span className="text-sm font-medium text-slate-500">{topic.title}</span>
       </div>
 
       {/* Question */}
@@ -448,27 +448,27 @@ export default function QuizPlay() {
           exit={{ opacity: 0, x: -30 }}
           className="glass-panel p-8"
         >
-          <h2 className="text-lg font-semibold text-white mb-6 leading-relaxed">{q.questionText}</h2>
+          <h2 className="text-lg font-semibold text-slate-800 mb-6 leading-relaxed">{q.questionText}</h2>
           <div className="grid gap-3">
             {q.options.map((opt, idx) => {
               let cls = 'p-4 rounded-xl border text-sm font-medium transition-all duration-300 cursor-pointer text-left w-full flex items-center gap-3 '
               if (!confirmed) {
                 cls += selected === idx
-                  ? 'bg-white/[0.08] border-cyan-400/40 text-white shadow-[0_0_20px_rgba(0,240,255,0.1)]'
-                  : 'bg-white/[0.02] border-white/[0.06] text-white/60 hover:bg-white/[0.05] hover:border-white/[0.12]'
+                  ? 'bg-indigo-50 border-indigo-300 text-slate-800 shadow-sm shadow-indigo-100'
+                  : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-50 hover:border-slate-300'
               } else {
-                if (q.options[idx] === q.correctAnswer) cls += 'bg-green-500/10 border-green-400/40 text-green-300'
-                else if (idx === selected) cls += 'bg-red-500/10 border-red-400/40 text-red-300'
-                else cls += 'bg-white/[0.01] border-white/[0.04] text-white/30'
+                if (q.options[idx] === q.correctAnswer) cls += 'bg-green-50 border-green-300 text-green-700'
+                else if (idx === selected) cls += 'bg-red-50 border-red-300 text-red-600'
+                else cls += 'bg-slate-50 border-slate-100 text-slate-400'
               }
               return (
                 <motion.button key={idx} onClick={() => handleSelect(idx)} whileTap={{ scale: 0.98 }} className={cls}>
-                  <span className="w-7 h-7 rounded-lg bg-white/[0.05] flex items-center justify-center text-xs font-bold shrink-0">
+                  <span className="w-7 h-7 rounded-lg bg-slate-100 flex items-center justify-center text-xs font-bold shrink-0">
                     {optionLetters[idx]}
                   </span>
                   <span>{opt}</span>
-                  {confirmed && q.options[idx] === q.correctAnswer && <Check size={16} className="ml-auto text-green-400" />}
-                  {confirmed && idx === selected && q.options[idx] !== q.correctAnswer && <X size={16} className="ml-auto text-red-400" />}
+                  {confirmed && q.options[idx] === q.correctAnswer && <Check size={16} className="ml-auto text-green-500" />}
+                  {confirmed && idx === selected && q.options[idx] !== q.correctAnswer && <X size={16} className="ml-auto text-red-500" />}
                 </motion.button>
               )
             })}
@@ -478,7 +478,7 @@ export default function QuizPlay() {
 
       {/* Actions */}
       <div className="flex justify-between">
-        <div className="text-sm text-white/30">Ball: <span className="text-white/70 font-bold">{score}</span></div>
+        <div className="text-sm text-slate-400">Ball: <span className="text-slate-700 font-bold">{score}</span></div>
         {!confirmed ? (
           <button onClick={handleConfirm} disabled={selected === null} className="btn-primary disabled:opacity-30 disabled:cursor-not-allowed flex items-center gap-2">
             <Check size={14} /> Tasdiqlash
