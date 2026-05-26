@@ -15,9 +15,14 @@ html {
 
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  @apply bg-brand-50 text-slate-800 dark:bg-cyber-900 dark:text-slate-200 transition-colors duration-500;
+  @apply bg-brand-50 text-slate-800 transition-colors duration-500;
   min-height: 100vh;
   overflow-x: hidden;
+}
+
+.dark body {
+  background-color: #0a0e1a;
+  @apply text-slate-200;
 }
 
 /* ===== SCROLLBAR ===== */
