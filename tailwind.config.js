@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -7,6 +8,22 @@ export default {
   theme: {
     extend: {
       colors: {
+        cyber: {
+          900: '#0a0e1a',
+          800: '#0f172a',
+          700: '#131d35',
+          600: '#1a2742',
+          500: '#1e3a5f',
+          400: '#2563eb',
+          300: '#3b82f6',
+          200: '#60a5fa',
+          100: '#93c5fd',
+          glow: '#00f0ff',
+          purple: '#a855f7',
+          pink: '#ec4899',
+          green: '#22c55e',
+          orange: '#f97316',
+        },
         brand: {
           50: '#eef2ff',
           100: '#e0e7ff',
@@ -36,8 +53,8 @@ export default {
       },
       keyframes: {
         'glow-pulse': {
-          '0%, 100%': { boxShadow: '0 0 20px rgba(99, 102, 241, 0.08)' },
-          '50%': { boxShadow: '0 0 40px rgba(99, 102, 241, 0.15)' },
+          '0%, 100%': { boxShadow: '0 0 20px rgba(0, 240, 255, 0.1)' },
+          '50%': { boxShadow: '0 0 40px rgba(0, 240, 255, 0.3)' },
         },
         'float': {
           '0%, 100%': { transform: 'translateY(0px)' },

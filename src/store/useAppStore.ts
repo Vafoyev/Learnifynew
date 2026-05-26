@@ -30,6 +30,10 @@ interface AppState {
   login: (data: UserData) => void
   logout: () => void
 
+  // Theme
+  theme: 'dark' | 'light'
+  toggleTheme: () => void
+
   // Progress
   xp: number
   level: number
@@ -82,6 +86,12 @@ export const useAppStore = create<AppState>()(
 
       logout: () => {
         set({ isLoggedIn: false, user: null })
+      },
+
+      // Theme
+      theme: 'dark',
+      toggleTheme: () => {
+        set((state) => ({ theme: state.theme === 'dark' ? 'light' : 'dark' }))
       },
 
       // Progress

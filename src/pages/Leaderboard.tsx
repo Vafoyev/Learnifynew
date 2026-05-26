@@ -15,7 +15,8 @@ const mockUsers = [
 ]
 
 export default function Leaderboard() {
-  const rankColors = ['#d97706', '#64748b', '#b45309']
+  const rankColors = ['#facc15', '#94a3b8', '#cd7f32']
+  const rankColorsDark = ['#facc15', '#c0c0c0', '#cd7f32']
 
   return (
     <div className="space-y-8">
@@ -23,7 +24,7 @@ export default function Leaderboard() {
         <motion.h1 initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="text-3xl font-extrabold">
           <span className="cyber-gradient-text">Reyting</span>
         </motion.h1>
-        <p className="text-slate-400 text-sm mt-1">Boshqa o'quvchilar bilan raqobatlashing</p>
+        <p className="text-slate-500 dark:text-white/40 text-sm mt-1">Boshqa o'quvchilar bilan raqobatlashing</p>
       </div>
 
       {/* Top 3 */}
@@ -34,20 +35,20 @@ export default function Leaderboard() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.15 }}
-            className={`glass-panel p-6 text-center ${i === 0 ? 'ring-1 ring-amber-300/40' : ''}`}
+            className={`glass-panel p-6 text-center ${i === 0 ? 'ring-1 ring-amber-300/50 dark:ring-yellow-400/20' : ''}`}
           >
             <div className="text-4xl mb-3">{u.avatar}</div>
-            {i === 0 ? <Crown size={20} className="mx-auto mb-2 text-amber-500" /> : <Medal size={18} className="mx-auto mb-2" style={{ color: rankColors[i] }} />}
-            <p className="text-sm font-semibold text-slate-800">{u.name}</p>
-            <p className="text-xs text-slate-400 mt-1">{u.xp.toLocaleString()} XP</p>
-            <p className="text-xs mt-1 font-bold" style={{ color: rankColors[i] }}>#{i + 1}</p>
+            {i === 0 ? <Crown size={20} className="mx-auto mb-2 text-amber-500 dark:text-yellow-400" /> : <Medal size={18} className="mx-auto mb-2" style={{ color: document.documentElement.classList.contains('dark') ? rankColorsDark[i] : rankColors[i] }} />}
+            <p className="text-sm font-semibold text-slate-800 dark:text-white/90">{u.name}</p>
+            <p className="text-xs text-slate-500 dark:text-white/30 mt-1">{u.xp.toLocaleString()} XP</p>
+            <p className="text-xs mt-1 font-bold" style={{ color: document.documentElement.classList.contains('dark') ? rankColorsDark[i] : rankColors[i] }}>#{i + 1}</p>
           </motion.div>
         ))}
       </div>
 
       {/* Full List */}
       <div className="glass-panel overflow-hidden">
-        <div className="grid grid-cols-[50px_1fr_80px_80px_60px] gap-2 px-5 py-3 border-b border-slate-100 text-xs text-slate-400 font-medium">
+        <div className="grid grid-cols-[50px_1fr_80px_80px_60px] gap-2 px-5 py-3 border-b border-slate-100 dark:border-white/[0.06] text-xs text-slate-400 dark:text-white/30 font-medium">
           <span>O'rin</span><span>O'quvchi</span><span>XP</span><span>Mavzu</span><span>Drj</span>
         </div>
         {mockUsers.map((u, i) => (
@@ -56,16 +57,16 @@ export default function Leaderboard() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: i * 0.05 }}
-            className={`grid grid-cols-[50px_1fr_80px_80px_60px] gap-2 px-5 py-3 items-center border-b border-slate-50 text-sm ${(u as any).isYou ? 'bg-indigo-50/60 border-indigo-100' : ''}`}
+            className={`grid grid-cols-[50px_1fr_80px_80px_60px] gap-2 px-5 py-3 items-center border-b border-slate-50 dark:border-white/[0.03] text-sm ${(u as any).isYou ? 'bg-indigo-50/50 dark:bg-cyan-400/5 border-indigo-100 dark:border-cyan-400/10' : ''}`}
           >
-            <span className="font-bold text-slate-400" style={i < 3 ? { color: rankColors[i] } : {}}>#{i + 1}</span>
+            <span className="font-bold text-slate-400 dark:text-white/40" style={i < 3 ? { color: document.documentElement.classList.contains('dark') ? rankColorsDark[i] : rankColors[i] } : {}}>#{i + 1}</span>
             <div className="flex items-center gap-2">
               <span>{u.avatar}</span>
-              <span className={`font-medium ${(u as any).isYou ? 'text-indigo-600' : 'text-slate-700'}`}>{u.name}</span>
+              <span className={`font-medium ${(u as any).isYou ? 'text-indigo-600 dark:text-cyan-400' : 'text-slate-700 dark:text-white/70'}`}>{u.name}</span>
             </div>
-            <span className="text-slate-500 font-mono text-xs">{u.xp.toLocaleString()}</span>
-            <span className="text-slate-400 text-xs">{u.topics}/30</span>
-            <span className="text-slate-400 text-xs">{u.level}</span>
+            <span className="text-slate-500 dark:text-white/50 font-mono text-xs">{u.xp.toLocaleString()}</span>
+            <span className="text-slate-400 dark:text-white/40 text-xs">{u.topics}/30</span>
+            <span className="text-slate-400 dark:text-white/40 text-xs">{u.level}</span>
           </motion.div>
         ))}
       </div>
